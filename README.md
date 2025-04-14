@@ -1,7 +1,7 @@
-# neo4j-dev-template
-This is a neo4j development template to setup the working of the graph database for developers. 
+# Neo4j Developer Template
+This is a neo4j development template with the pre-configured sample CSV files mapped to import section, sample python script to programatically connect to neo4j instance and create a sample graph from the cypher query file. This setup comes with the `apoc` plugin configured for the setup.
 
-
+## Refrences
 
 [Getting started with Neo4j in Docker](https://neo4j.com/docs/operations-manual/current/docker/introduction/)
 
