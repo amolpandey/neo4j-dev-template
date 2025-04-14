@@ -7,7 +7,7 @@ services:
     image: "alpine:latest"
     container_name: "volume_instantiation"
     command: |
-      mkdir -p /mount/config/ /mount/logs/ /mount/data/
+      mkdir -p /mount/logs/ /mount/data/
     volumes:
       - neo4j-vol:/mount
 
@@ -24,36 +24,22 @@ services:
           subpath: logs/
       - type: volume
         source: neo4j-vol
-        target: /config
-        volume:
-          nocopy: true
-          subpath: config/
-      - type: volume
-        source: neo4j-vol
         target: /data
         volume:
           nocopy: true
           subpath: data/
 
-      # - neo4j-vol-logs:/logs
-      # - neo4j-vol-config:/config
-      # - ./src/data:/data
-
       - ./src/plugins:/var/lib/neo4j/plugins
-      - ./src/backup:/backup
       - ./src/import:/var/lib/neo4j/import
     environment:
         - NEO4J_AUTH=neo4j/dev$&run123
         - NEO4J_apoc_export_file_enabled=true
         - NEO4J_apoc_import_file_enabled=true
         - NEO4J_apoc_import_file_use__neo4j__config=true
-        - NEO4JLABS_PLUGINS=['apoc', 'graph-data-science']
+        - NEO4J_PLUGINS=['apoc', 'graph-data-science']
     ports:
       - "7474:7474"
       - "7687:7687"
 
 volumes:
   neo4j-vol:
-  # neo4j-vol-logs:
-  # neo4j-vol-config:
-  # neo4j-vol-plugins:
