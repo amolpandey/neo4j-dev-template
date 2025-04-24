@@ -13,10 +13,10 @@ This setup includes a sample graph data for the ficticious electrical distributi
 ![Electrical Distribution Graph](img/Screenshot%202025-04-24%20at%202.35.23 pm.png)
 
 The script components of this demo graph are as follows:
-- code/graph_analysis_2.py : This script will read the parquet file and generate the CSV format required for ingestion into Ne04J
-- src/import/elect_dist : This is the destination location for the CSV which will be  visible to Neo4J database
-- data/graph_data.parquet : This is a dummy data electrical distribution graph 
-- cypher/elect_dist.cypher : This contains the scripts to load the CSV data as graph and sample analytical queries
+- *code/graph_analysis_2.py*: This script will read the parquet file and generate the CSV format required for ingestion into Ne04J
+- *src/import/elect_dist*: This is the destination location for the CSV which will be  visible to Neo4J database
+- *data/graph_data.parquet*: This is a dummy data electrical distribution graph 
+- *cypher/elect_dist.cypher*: This contains the scripts to load the CSV data as graph and sample analytical queries
 
 
 ## Docker multiple folder on same volume
