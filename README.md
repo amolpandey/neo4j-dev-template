@@ -5,6 +5,20 @@ A sample python script to programatically connect to neo4j instance and create a
 
 This setup comes with the `apoc` & `graph-data-science` plugin configured for the setup.
 
+## Demo electrical distribution graph
+This setup includes a sample graph data for the ficticious electrical distribution, that will allow the users to design and evalute the queries on the sample graph DB. 
+
+`call db.schema.visualization`
+
+![Electrical Distribution Graph](img/Screenshot%202025-04-24%20at%202.35.23 pm.png)
+
+The script components of this demo graph are as follows:
+- code/graph_analysis_2.py : This script will read the parquet file and generate the CSV format required for ingestion into Ne04J
+- src/import/elect_dist : This is the destination location for the CSV which will be  visible to Neo4J database
+- data/graph_data.parquet : This is a dummy data electrical distribution graph 
+- cypher/elect_dist.cypher : This contains the scripts to load the CSV data as graph and sample analytical queries
+
+
 ## Docker multiple folder on same volume
 
 There has been few insitances where I didnt wanted to create multiple volumes/bind mounts, instead I wanted to have multiple folders within the same volume mapped to various locations of the target container. 
@@ -44,3 +58,9 @@ The above folders are mapped respectivly in the running container
 `pip install -r .\requirements.txt`
 
 `python.exe -m pip install --upgrade pip`
+
+## Custom alias in MacOS 
+
+`open -e ~/.bash_profile`
+
+`open -e ~/.zshrc`
